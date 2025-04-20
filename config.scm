@@ -13,6 +13,8 @@
 	     (gnu services containers)
 	     (gnu services docker)
 	     (gnu system accounts)
+	     (nongnu packages linux)
+	     (nongnu system linux-initrd)
 	     (rosenthal packages networking)
 	     (rosenthal services networking))
 (use-service-modules cups desktop networking ssh xorg)
@@ -23,6 +25,9 @@
   (timezone "America/Chicago")
   (keyboard-layout (keyboard-layout "us"))
   (host-name "Guix")
+ 
+  (kernel linux)
+  (firmware (list linux-firmware))
 
   ;; The list of user accounts ('root' is implicit).
   (users (cons* (user-account
